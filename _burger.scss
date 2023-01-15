@@ -1,0 +1,46 @@
+.burger-menu {
+    position: relative;
+    margin-left: 40px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+.burger-menu span {
+    position: absolute;
+    left: 3px;
+    top: calc(50% - 2.5px);
+    display: block;
+    width: 35px;
+    height: 5px;
+    border-radius: 2px;
+    background-color: #000;
+}
+.burger-menu span::after,
+.burger-menu span::before {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 5px;
+    border-radius: 2px;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    transition: all .3s;
+}
+.burger-menu span::before {
+    top: 10px;
+}
+.burger-menu span::after {
+    bottom: 10px;
+}
+.burger-menu.active span {
+    width: 0;
+}
+.burger-menu.active span::after {
+    transform: rotate(45deg);
+    top: 2px;
+}
+.burger-menu.active span::before {
+    transform: rotate(-45deg);
+    top: 2px;
+}
